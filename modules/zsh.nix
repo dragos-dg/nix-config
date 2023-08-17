@@ -67,11 +67,13 @@
 
       #   source ~/.config/op/plugins.sh
       #   bindkey '^[[Z' autosuggest-accept # shift + tab | autosuggest
+
+      source ~/.config/zsh/localpat
       '';
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "thefuck" "fzf" ];
+        plugins = [ "git" "fzf" ];
       };
     };
 }

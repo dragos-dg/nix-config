@@ -40,6 +40,7 @@
         modules = [
           home
           ./modules/zsh.nix
+          ./modules/starship.nix
         ];
       };
     };

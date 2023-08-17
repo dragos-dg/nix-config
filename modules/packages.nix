@@ -5,6 +5,8 @@ let
     iterm2
     neovim
     lsd
-    thefuck
+    cargo
+    nerdfonts
+    hack-font
   ];
 in packages
