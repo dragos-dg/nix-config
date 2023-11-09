@@ -7,6 +7,7 @@ let
     lsd
     cargo
     nerdfonts
+    utm
     hack-font
   ];
 in packages

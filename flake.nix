@@ -2,9 +2,9 @@
   description = "Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -14,7 +14,6 @@
       # Values you should modify
       username = "dragos"; # $USER
       system = "aarch64-darwin";  # x86_64-linux, aarch64-multiplatform, etc.
-      stateVersion = "23.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
 
       pkgs = import nixpkgs {
         inherit system;
@@ -30,7 +29,7 @@
       homeDirectory = "/${homeDirPrefix}/${username}";
 
       home = (import ./modules/home.nix {
-        inherit homeDirectory pkgs stateVersion system username;
+        inherit homeDirectory pkgs system username;
       });
     in
     {

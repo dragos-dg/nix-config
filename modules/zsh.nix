@@ -7,8 +7,8 @@
 
       enableAutosuggestions = true;
       enableCompletion = true;
-      syntaxHighlighting.enable = true;
       dotDir = ".config/zsh";
+      enableSyntaxHighlighting = true;
       autocd = true;
 
       sessionVariables = {
@@ -16,8 +16,6 @@
         CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include";
         DOCKER_HOST="unix://$HOME/.colima/docker.sock";
         TESTCONTAINERS_RYUK_DISABLED=true;
-        FLORENCE_PLATFORM="germany-staging";
-        FLORENCE_PROJECT_ID="01H5W9K2315FH6PTC708SR5509";
       };
       localVariables = {
       };
@@ -42,9 +40,10 @@
         fl_login="florence gcp login";
         fl_k_proxy="florence magic kube-proxy";
         fl_http_proxy="florence magic http-proxy";
-        colima_start="colima start --kubernetes --kubernetes-version \"v1.24.14+k3s1\" --cpu 6 --memory 24";
+        colima_start="colima start --kubernetes --kubernetes-version \"v1.25.11+k3s1\" --cpu 6 --memory 24";
         gcloud_login="gcloud auth login";
         vts_tunel="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
+        t3_start="proxyman run firefox staging germany https://01h7anw390n4t3m1xxv96ak8e9.germany.jpmorgan.io/t3/";
       };
 
       history = {

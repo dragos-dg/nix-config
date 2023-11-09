@@ -1,6 +1,5 @@
 { homeDirectory
 , pkgs
-, stateVersion
 , system
 , username
 }:
@@ -10,10 +9,11 @@ let
 in
 {
   home = {
-    inherit homeDirectory packages stateVersion username;
+    inherit homeDirectory packages username;
 
     sessionPath = [ "$HOME/.local/bin" ];
 
+    stateVersion = "23.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
     shellAliases = {
       hm = "~/.config/home-manager/bin/hm";
     };
