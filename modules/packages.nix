@@ -8,6 +8,7 @@ let
     cargo
     nerdfonts
     utm
+    delta
     hack-font
   ];
 in packages
