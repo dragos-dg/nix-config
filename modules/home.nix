@@ -19,7 +19,7 @@ in
     };
   };
 
-  programs = import ./programs.nix;
+  programs = import ./programs.nix{inherit pkgs;};
 
   xdg.enable = true;
 }

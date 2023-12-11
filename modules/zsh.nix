@@ -44,6 +44,7 @@
         gcloud_login="gcloud auth login";
         vts_tunel="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
         t3_start="proxyman run firefox staging germany https://01h7anw390n4t3m1xxv96ak8e9.germany.jpmorgan.io/t3/";
+        t3_bck="k exec -n env-01h7anw390n4t3m1xxv96ak8e9 ttt-product-db-0 -it -- /bin/sh -c 'PGPASSWORD=foo-bar-baz pg_dump -Fp -U postgres t3switch_db'";
       };
 
       history = {

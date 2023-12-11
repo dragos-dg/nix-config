@@ -10,5 +10,6 @@ let
     utm
     delta
     hack-font
+    inetutils
   ];
 in packages
