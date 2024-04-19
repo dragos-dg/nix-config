@@ -11,5 +11,7 @@ let
     delta
     hack-font
     inetutils
+    android-tools
+    htop
   ];
 in packages
