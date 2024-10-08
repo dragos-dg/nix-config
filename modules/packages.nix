@@ -4,6 +4,7 @@ let
   packages = with pkgs; [
     iterm2
     neovim
+    laio
     lsd
     cargo
     nerdfonts

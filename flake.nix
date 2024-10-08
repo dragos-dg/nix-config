@@ -2,14 +2,15 @@
   description = "Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    laio.url = "github:ck3mp3r/laio-cli";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, laio }:
     let
       # Values you should modify
       username = "dragos"; # $USER
@@ -17,6 +18,12 @@
 
       pkgs = import nixpkgs {
         inherit system;
+        
+        overlays = [
+          (final: next: {
+            laio = laio.packages.${system}.default;
+          })
+        ];
 
         config = {
           allowUnfree = true;

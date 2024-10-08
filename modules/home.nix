@@ -13,7 +13,7 @@ in
 
     sessionPath = [ "$HOME/.local/bin" ];
 
-    stateVersion = "23.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
+    stateVersion = "24.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
     shellAliases = {
       hm = "~/.config/home-manager/bin/hm";
     };

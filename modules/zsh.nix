@@ -5,10 +5,10 @@
     {
       enable = true;
 
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       dotDir = ".config/zsh";
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       autocd = true;
 
       sessionVariables = {
@@ -43,10 +43,11 @@
         colima_start="colima start --kubernetes --kubernetes-version \"v1.25.11+k3s1\" --cpu 10 --memory 24";
         gcloud_login="gcloud auth login";
         vts_tunel="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
-        t3_start="proxyman run firefox staging germany https://01h7anw390n4t3m1xxv96ak8e9.germany.jpmorgan.io/t3/";
-        t3_bck="k exec -n env-01h7anw390n4t3m1xxv96ak8e9 ttt-product-db-0 -it -- /bin/sh -c 'PGPASSWORD=foo-bar-baz pg_dump -Fp -U postgres t3switch_db'";
+        t3_start="proxyman run firefox staging germany https://functional.card.env.germany.jpmorgan.io/t3/";
         gu="for n in `find . -name .git`; do pushd `dirname $n`; gfa; ggpull --autostash; popd; done;";
-      };
+        deployments="FLORENCE_PROJECT_ID=01H5W9K2315FH6PTC708SR5509 provision environments";
+        proxy_port="proxyman print staging germany | cut -d \":\" -f 2 | pbcopy";
+ };
 
       history = {
         size = 10000;

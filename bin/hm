@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _switch() {
-    home-manager switch -b backup
+    nix run home-manager -- switch -b backup
 }
 
 _print_help() {
