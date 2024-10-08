@@ -7,6 +7,7 @@ let
     laio
     lsd
     cargo
+    gh
     nerdfonts
     utm
     delta
