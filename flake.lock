@@ -87,11 +87,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1728420669,
-        "narHash": "sha256-CaMPBuF8SNeWUjB34J4of9sLeFUWlG74/qKXPzGI+eg=",
+        "lastModified": 1728486164,
+        "narHash": "sha256-hZtBMLM+PyblTJ3IpbU4Q+MDV0ZjOlAwIsoGLV9cMDI=",
         "owner": "ck3mp3r",
         "repo": "laio-cli",
-        "rev": "30e69097839690ed03d6de76b56bb2d29b3e27e8",
+        "rev": "337a06677a60344a436172896464c26022444adf",
         "type": "github"
       },
       "original": {

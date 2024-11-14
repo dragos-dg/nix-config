@@ -37,19 +37,17 @@
         kx = "kubectx";
 
         tree = "lsd --tree";
-        gradle = "./gradlew";
-        projects = "cd ~/projects";
-        charts = "cd ~/projects/card-tooling/charts";
         kl="kubectl";
         fl_export="export KUBECONFIG=~/.config/proxyman/kube.conf";
         colima_start="colima start --kubernetes --kubernetes-version \"v1.25.11+k3s1\" --cpu 10 --memory 24";
         gcloud_login="gcloud auth login";
-        vts_tunel="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
-        t3_start="proxyman start -p -k b2b_staging -f https://functional.card.env.germany.jpmorgan.io/t3/";
+        wvm="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
+        t3="proxyman start -p -k b2b_staging -f https://functional.card.env.germany.jpmorgan.io/t3/";
         gu="for n in `find . -name .git`; do pushd `dirname $n`; gfa; ggpull --autostash; popd; done;";
-        deployments="FLORENCE_PROJECT_ID=01H5W9K2315FH6PTC708SR5509 provision environments";
-        proxy_port="proxyman print staging germany | cut -d \":\" -f 2 | pbcopy";
- };
+        pulumi=" proxyman start -p -k b2b_staging";
+        stg=" proxyman start -p -k b2b_staging_stg";
+        dev=" proxyman start -p -k b2b_staging_dev";
+};
 
       history = {
         size = 10000;
