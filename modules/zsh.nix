@@ -44,9 +44,10 @@
         wvm="gcloud compute start-iap-tunnel cards-mas-windows-vm 3389 --local-host-port=localhost:3398 --zone=europe-west2-a --project=cards-mas-vm";
         t3="proxyman start -p -k b2b_staging -f https://functional.card.env.germany.jpmorgan.io/t3/";
         gu="for n in `find . -name .git`; do pushd `dirname $n`; gfa; ggpull --autostash; popd; done;";
-        pulumi=" proxyman start -p -k b2b_staging";
-        stg=" proxyman start -p -k b2b_staging_stg";
-        dev=" proxyman start -p -k b2b_staging_dev";
+        pulumi="proxyman start -p -k b2b_staging";
+        stg="proxyman start -p -k b2b_staging_stg";
+        dev="proxyman start -p -k b2b_staging_dev";
+        jfrog="echo $JF_ACCESS_TOKEN | docker login https://chaseio.jfrog.io -u $JF_USERNAME --password-stdin";
 };
 
       history = {
@@ -61,6 +62,7 @@
       };
 
       initExtra = ''
+
       # SDK Man
       [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
       # Nix
@@ -71,6 +73,12 @@
 
       #   source ~/.config/op/plugins.sh
       #   bindkey '^[[Z' autosuggest-accept # shift + tab | autosuggest
+ 
+      JF_USERNAME=dragos.dumitrescu@chase.io
+      JF_ACCESS_TOKEN=$(jf access-token-create --expiry 86400  --reference=true | jq -r ".reference_token")
+      export JF_USERNAME
+      export JF_ACCESS_TOKEN
+      echo $JF_ACCESS_TOKEN | docker login https://chaseio.jfrog.io -u $JF_USERNAME --password-stdin
 
       source ~/.config/zsh/localpat
       '';
